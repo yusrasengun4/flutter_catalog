@@ -7,7 +7,7 @@ class AuthException implements Exception {
 }
 
 class AuthService {
-  // Tek örnek: giriş bilgisi her ekrandan okunabilir
+
   static final AuthService instance = AuthService._();
   AuthService._();
 
