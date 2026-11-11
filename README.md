@@ -2,6 +2,9 @@
 Flutter ile geliştirilmiş basit bir ürün kataloğu uygulaması. Ürün verileri DummyJSON API'sinden çekilir. Arayüz tamamen Flutter'ın kendi material.dart paketiyle yazılmıştır.
 
 ## Özellikler
+
+-Kullanıcı girişi(DummyJSON auth/login)
+
 -Ana ekranda kategori grupları(Manav,Giyim,Kozmetik,Elektronik,Ev&Yaşam,Aksesuar,Spor&Araç)
 
 -Seçilen gruba ait ürünlerin listelenmesi
@@ -35,6 +38,16 @@ Flutter ile geliştirilmiş basit bir ürün kataloğu uygulaması. Ürün veril
 ```bash
    flutter run
 ```
+##Giriş Bilgileri
+
+Giriş için DummyJSON daki test kullanıcılardan biri kullanılabilir:
+
+Kullanıcı adı:emilys
+
+Şifre:emilyspass
+
+Diğer kullanıcılar için: https://dummyjson.com/users
+
 ##Proje Yapısı
 ```
 lib/
@@ -43,10 +56,12 @@ lib/
 │   ├── product.dart
 │   └── category_group.dart
 ├── services/
-│   ├── api_service.dart     # Ürün istekleri
+│   ├── api_service.dart       # Ürün istekleri
+    ├── auth_service.dart      #Giriş
 │   └── store.dart           # Favoriler ve sepet (ChangeNotifier)
     
 ├── screens/
+│   ├── login_screen.dart
 │   ├── home_screen.dart
 │   ├── product_screen.dart
 │   ├── detail_screen.dart
