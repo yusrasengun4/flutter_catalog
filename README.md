@@ -1,16 +1,61 @@
-# flutter_catalog
+# Ürün Kataloğu
+Flutter ile geliştirilmiş basit bir ürün kataloğu uygulaması. Ürün verileri DummyJSON API'sinden çekilir. Arayüz tamamen Flutter'ın kendi material.dart paketiyle yazılmıştır.
 
-A new Flutter project.
+## Özellikler
+-Ana ekranda kategori grupları(Manav,Giyim,Kozmetik,Elektronik,Ev&Yaşam,Aksesuar,Spor&Araç)
 
-## Getting Started
+-Seçilen gruba ait ürünlerin listelenmesi
 
-This project is a starting point for a Flutter application.
+-Ürün detay sayfası(görsel,fiyat,açıklama,marka,stok,puan)
 
-A few resources to get you started if this is your first Flutter project:
+-Favorilere ekleme/çıkarma ve favoriler ekranı
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+-Sepet ve sipariş verme
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##Kullanılan Teknolojiler
+
+-Flutter :3.32.8
+
+-Android Studio(Android emülatörü)
+
+-[DummyJSON](https://dummyjson.com)
+
+##Kurulum
+
+1.Projeyi klonlama:
+```bash
+   git clone https://github.com/yusrasengun4/flutter_catalog.git
+   cd flutter_catalog
+```
+2.Bağımlılıkları indirme:
+```bash
+   flutter pub get
+```
+3.Uygulamayı çalıştırma:
+```bash
+   flutter run
+```
+##Proje Yapısı
+```
+lib/
+├── main.dart
+├── models/
+│   ├── product.dart
+│   └── category_group.dart
+├── services/
+│   ├── api_service.dart     # Ürün istekleri
+│   └── store.dart           # Favoriler ve sepet (ChangeNotifier)
+    
+├── screens/
+│   ├── home_screen.dart
+│   ├── product_screen.dart
+│   ├── detail_screen.dart
+│   ├── favorites_screen.dart
+│   └── cart_screen.dart
+└── widgets/
+    └── product_card.dart
+
+```
+##Notlar
+
+Favoriler ve sepet bellekte tutulur; uygulama kapatılınca sıfırlanır.
