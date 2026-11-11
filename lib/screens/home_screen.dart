@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../models/category_group.dart';
 import '../services/store.dart';
+import '../services/auth_service.dart';
 import 'cart_screen.dart';
 import 'favorites_screen.dart';
 import 'product_screen.dart';
-
+import 'login_screen.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -16,6 +17,20 @@ class HomeScreen extends StatelessWidget {
         title: const Text("Ürün Kataloğu"),
         centerTitle: true,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: "Çıkış yap",
+            onPressed: () {
+             AuthService.instance.logout();
+             Store.instance.clearCart();
+
+             Navigator.pushAndRemoveUntil(
+             context,
+             MaterialPageRoute(builder: (_) => const LoginScreen()),
+               (route) => false, // önceki tüm ekranları temizle
+             );
+            },
+        ),
           IconButton(
             icon: const Icon(Icons.favorite),
             onPressed: () {
