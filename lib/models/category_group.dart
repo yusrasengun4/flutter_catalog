@@ -16,7 +16,7 @@ class CategoryGroup {
 
 const List<CategoryGroup> categoryGroups = [
   CategoryGroup(
-    title: "Manav",
+    title: "Manav & Şarküteri",
     icon: Icons.local_grocery_store,
     color: Colors.green,
     slugs: ["groceries"],
